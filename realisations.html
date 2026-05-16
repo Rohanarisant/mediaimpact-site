@@ -115,6 +115,35 @@
     /* ═══ CSS SPÉCIFIQUE RÉALISATIONS ═══ */
 
     /* HERO */
+    /* Hero image plein écran */
+    .hero-image {
+      margin-top: var(--nav-h);
+      width: 100%;
+      height: 65vh;
+      min-height: 400px;
+      max-height: 620px;
+      position: relative;
+      overflow: hidden;
+      background: var(--charbon);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    }
+    .hero-image-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
     .hero {
       padding-top: calc(var(--nav-h) + 5rem);
       padding-bottom: 5rem;
@@ -336,34 +365,20 @@
 <main>
 
 <!-- HERO -->
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow reveal reveal-1">
-        <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-        Réalisations & success stories
-      </div>
-      <h1 class="hero-title reveal reveal-2" id="hero-title">
-        L'art de transformer<br>l'événement en <em>actif réputationnel</em>
-      </h1>
-      <p class="hero-sub reveal reveal-3">Depuis 35 ans, Media Impact orchestre des opérations médiatiques qui transforment des exploits humains, sportifs et technologiques en leviers de réputation durables — en Suisse et à l'international.</p>
-    </div>
-    <div class="hero-piliers reveal reveal-3" aria-label="Nos trois piliers">
-      <div class="hero-pilier">
-        <div class="hero-pilier-title">Narration de l'exploit</div>
-        <div class="hero-pilier-body">Transformer des défis technologiques ou humains en récits universels qui traversent les frontières et les générations.</div>
-      </div>
-      <div class="hero-pilier">
-        <div class="hero-pilier-title">Image radicale</div>
-        <div class="hero-pilier-body">Créer des signaux visuels si puissants qu'ils s'affranchissent des frontières culturelles et des algorithmes de diffusion.</div>
-      </div>
-      <div class="hero-pilier">
-        <div class="hero-pilier-title">Légitimité territoriale</div>
-        <div class="hero-pilier-body">Ancrer les marques dans leurs univers de performance — les associer durablement à des symboles d'excellence.</div>
-      </div>
-    </div>
+<!-- ⚠️ REMPLACER src par img/realisations-hero.jpg quand la photo est prête -->
+<div class="hero-image" aria-label="Réalisations Media Impact">
+  <img src="img/realisations-hero.jpg"
+       alt="Media Impact — 35 ans d'opérations médiatiques mondiales"
+       loading="eager"
+       onerror="this.parentElement.style.minHeight='400px'">
+  <div class="hero-image-overlay" aria-hidden="true"></div>
+  <div class="hero-image-content">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--brique);margin-bottom:0.75rem;">Réalisations & success stories</div>
+    <h1 style="font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,54px);font-weight:700;letter-spacing:-0.01em;color:#FAFAF8;line-height:1.1;max-width:700px;" id="hero-title">
+      L'art de transformer l'événement en <span style="color:var(--brique);">actif réputationnel</span>
+    </h1>
   </div>
-</section>
+</div>
 
 <!-- CHIFFRES CLÉS -->
 <section class="chiffres" aria-label="Chiffres clés des réalisations">
@@ -406,6 +421,7 @@
 
       <!-- BREITLING — featured -->
       <a href="breitling.html" class="real-card real-card--featured scroll-reveal" aria-label="Success story Breitling">
+        <div class="real-card-img"><img src="https://static.wixstatic.com/media/4e443a_0cb0f81efd6d4f7ba57c01a6e7b0174a~mv2.jpg" alt="Breitling — Super Constellation" loading="lazy"></div>
         <div class="real-tag">Aéronautique — 20 ans de collaboration</div>
         <div class="real-duration">20</div>
         <h2 class="real-title">Breitling Orbiter & Solar Impulse</h2>
@@ -418,6 +434,7 @@
 
       <!-- ILLUMINATION VALAIS -->
       <a href="valais.html" class="real-card scroll-reveal" aria-label="Success story Illumination Valais">
+        <div class="real-card-img"><img src="https://static.wixstatic.com/media/4e443a_7ebb295121384063926dfec06f9ccf9d~mv2.jpg" alt="Bietschhorn illuminé — Valais" loading="lazy"></div>
         <div class="real-tag">Territoire — Opération unique</div>
         <div class="real-metric">2 Md</div>
         <h2 class="real-title">Illumination des sommets valaisans</h2>
@@ -430,6 +447,7 @@
 
       <!-- OMEGA -->
       <a href="omega.html" class="real-card scroll-reveal" aria-label="Success story Omega">
+        <div class="real-card-img" style="display:flex;align-items:center;justify-content:center;background:var(--brume-pale);"><img src="img/logos/omega.png" alt="Omega" loading="lazy" style="height:60px;width:auto;object-fit:contain;"></div>
         <div class="real-tag">Horlogerie de prestige</div>
         <h2 class="real-title">Omega — La précision en mouvement</h2>
         <p class="real-body">Jeep lunaire sur la rade de Genève avec Eugene Cernan, conférence Nicole Kidman, golf mondial. Traduire l'ADN d'une maison de prestige en expériences réelles à forte résonance médiatique internationale.</p>
@@ -441,6 +459,7 @@
 
       <!-- SALON DES INVENTIONS -->
       <a href="inventions.html" class="real-card scroll-reveal" aria-label="Success story Salon des Inventions">
+        <div class="real-card-img" style="display:flex;align-items:center;justify-content:center;background:var(--brume-pale);"><img src="img/logos/inventions.png" alt="Salon des Inventions de Genève" loading="lazy" style="height:80px;width:auto;object-fit:contain;"></div>
         <div class="real-tag">Innovation — 30 ans</div>
         <div class="real-metric">30</div>
         <h2 class="real-title">Salon international des Inventions</h2>
@@ -453,6 +472,7 @@
 
       <!-- GRAND RAID -->
       <a href="grand-raid.html" class="real-card scroll-reveal" aria-label="Success story Grand Raid BCVs">
+        <div class="real-card-img"><img src="img/grand-raid-hero.jpg" alt="Grand Raid BCVs — Verbier Grimentz" loading="lazy" onerror="this.parentElement.style.background='#F3F4F6'"></div>
         <div class="real-tag">Sport d'endurance — 19 ans</div>
         <div class="real-metric">125 km</div>
         <h2 class="real-title">Grand Raid BCVs</h2>
