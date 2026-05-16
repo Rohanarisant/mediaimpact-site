@@ -222,6 +222,36 @@
     .bio-highlight-title { font-size: 14px; margin-bottom: 0.3rem; }
     .bio-highlight-body { font-size: 13px; font-weight: 300; color: var(--graphite); line-height: 1.55; }
 
+
+    .bio-card-photo {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .bio-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%);
+      transition: filter 0.3s;
+    }
+    .bio-card:hover .bio-card-photo img { filter: grayscale(0%); }
+
+    /* Photo duo dans conviction */
+    .conviction-photo {
+      width: 100%;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .conviction-photo img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center;
+    }
     /* CONVICTION COMMUNE */
     .conviction {
       padding: 6rem 0;
@@ -357,6 +387,9 @@
     <!-- GÉRARD SERMIER -->
     <article class="bio scroll-reveal" id="gerard-sermier">
       <div class="bio-card" aria-label="Fiche Gérard Sermier">
+        <div class="bio-card-photo">
+          <img src="img/gerard.avif" alt="Gérard Sermier — Associé fondateur de Media Impact" loading="lazy">
+        </div>
         <div class="bio-card-tag">Associé fondateur</div>
         <h2 class="bio-card-name">Gérard Sermier</h2>
         <div class="bio-card-role">Fondateur de Media Impact en 1990</div>
@@ -440,6 +473,9 @@
     <!-- ROHAN SANT -->
     <article class="bio bio--reverse scroll-reveal" id="rohan-sant">
       <div class="bio-card" aria-label="Fiche Rohan Sant">
+        <div class="bio-card-photo">
+          <img src="img/rohan.avif" alt="Rohan Sant — Associé fondateur de Media Impact" loading="lazy">
+        </div>
         <div class="bio-card-tag">Associé fondateur</div>
         <h2 class="bio-card-name">Rohan Sant</h2>
         <div class="bio-card-role">Cofondateur de Media Impact SA en 2024</div>
@@ -519,6 +555,9 @@
         La rigueur éditoriale<br>comme <em>fondement</em>
       </h2>
       <p class="conviction-body">Deux parcours différents, une même conviction&nbsp;: une communication efficace repose sur les mêmes principes qu'un bon article de presse — vérification, clarté, cohérence, respect de l'interlocuteur. C'est cette exigence journalistique qui différencie Media Impact des agences de communication traditionnelles.</p>
+    </div>
+    <div class="conviction-photo">
+      <img src="img/gerard-rohan.avif" alt="Gérard Sermier et Rohan Sant — Associés fondateurs de Media Impact" loading="lazy">
     </div>
     <div class="conviction-quotes">
       <div class="conviction-quote scroll-reveal">

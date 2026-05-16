@@ -810,6 +810,50 @@ footer {
       letter-spacing: 0.02em;
     }
 
+    /* ─── LOGOS CLIENTS ──────────────────────────────────── */
+    .clients-logos {
+      padding: 4rem 0;
+      background: var(--papier);
+      border-bottom: 1px solid var(--brume);
+    }
+    .clients-label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--graphite-light);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 0;
+      background: var(--brume);
+      border: 1px solid var(--brume);
+    }
+    .client-logo {
+      background: var(--papier);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--brume);
+      border-bottom: 1px solid var(--brume);
+      transition: background 0.2s;
+    }
+    .client-logo:hover { background: var(--brume-pale); }
+    .client-logo img {
+      max-height: 44px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.55);
+      transition: filter 0.2s;
+    }
+    .client-logo:hover img { filter: grayscale(0%) opacity(1); }
+
     /* ─── EXPERTISES ─────────────────────────────────────── */
     .expertises { padding: 7rem 0; background: var(--papier); }
     .expertises-grid {
@@ -1055,6 +1099,7 @@ footer {
 
     /* ─── RESPONSIVE PAGE ────────────────────────────────── */
     @media (max-width: 900px) {
+      .clients-grid { grid-template-columns: repeat(4, 1fr); }
       .hero::before { display: none; }
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
       .hero-panel { padding: 0; }
@@ -1071,6 +1116,7 @@ footer {
       .realisations-header { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 580px) {
+      .clients-grid { grid-template-columns: repeat(3, 1fr); }
       .hero { padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 3rem; }
       .hero-stats { grid-template-columns: 1fr 1fr; }
     }
@@ -1169,63 +1215,31 @@ footer {
   </div>
 </section>
 
-<!-- ─── TICKER ─────────────────────────────────────────── -->
-<div class="ticker-wrap" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="ticker-label">Clients</span>
-    <div class="ticker-track">
-      <span class="ticker-item">Omega</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Breitling</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Solar Impulse</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">HEC UNIL</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Aerovolt</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Grand Raid BCVs</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Salon des Inventions</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Jetman</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Eaton</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Koenig &amp; Bauer</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Greenmotion</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">UBP</span>
-      <span class="ticker-item sep">▪</span>
-      <!-- duplicate for infinite loop -->
-      <span class="ticker-item">Omega</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Breitling</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Solar Impulse</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">HEC UNIL</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Aerovolt</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Grand Raid BCVs</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Salon des Inventions</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Jetman</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Eaton</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Koenig &amp; Bauer</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">Greenmotion</span>
-      <span class="ticker-item sep">▪</span>
-      <span class="ticker-item">UBP</span>
-      <span class="ticker-item sep">▪</span>
+
+<!-- ─── LOGOS CLIENTS ──────────────────────────────────── -->
+<section class="clients-logos" aria-label="Ils nous font confiance">
+  <div class="container">
+    <div class="clients-label">Ils nous font confiance</div>
+    <div class="clients-grid">
+      <div class="client-logo"><img src="img/logos/breitling.jpg" alt="Breitling"></div>
+      <div class="client-logo"><img src="img/logos/omega.png" alt="Omega"></div>
+      <div class="client-logo"><img src="img/logos/jetman.png" alt="Yves Rossy — Jetman"></div>
+      <div class="client-logo"><img src="img/logos/aerovolt.png" alt="Aerovolt"></div>
+      <div class="client-logo"><img src="img/logos/hec.png" alt="HEC Lausanne — UNIL"></div>
+      <div class="client-logo"><img src="img/logos/inventions.png" alt="Salon des Inventions de Genève"></div>
+      <div class="client-logo"><img src="img/logos/smn.png" alt="Swiss Medical Network"></div>
+      <div class="client-logo"><img src="img/logos/tradition.png" alt="Compagnie Financière Tradition"></div>
+      <div class="client-logo"><img src="img/logos/wista.jpg" alt="WISTA Switzerland"></div>
+      <div class="client-logo"><img src="img/logos/koenig-bauer.jpeg" alt="Koenig &amp; Bauer"></div>
+      <div class="client-logo"><img src="img/logos/aquaparc.png" alt="Aquaparc"></div>
+      <div class="client-logo"><img src="img/logos/evolene.png" alt="Évolène Région"></div>
+      <div class="client-logo"><img src="img/logos/swiss-voice.jpeg" alt="Swiss Voice Tour"></div>
+      <div class="client-logo"><img src="img/logos/webcaution.png" alt="WebCaution"></div>
+      <div class="client-logo"><img src="img/logos/cousu-mouche.jpg" alt="Éditions Cousu Mouche"></div>
+      <div class="client-logo"><img src="img/logos/thierry-devaux.jpg" alt="Thierry Devaux"></div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ─── EXPERTISES ─────────────────────────────────────── -->
 <section class="expertises" aria-labelledby="expertises-title">
@@ -1275,7 +1289,10 @@ footer {
     <div class="manifeste-aside">
       <div class="manifeste-year" aria-hidden="true">1990</div>
       <div class="manifeste-tag">Fondée à Genève</div>
-      <div class="manifeste-founders">
+      <div style="width:100%;overflow:hidden;margin-bottom:1.5rem;">
+      <img src="img/journals.avif" alt="Presse et journaux — héritage journalistique de Media Impact" loading="lazy" style="width:100%;height:180px;object-fit:cover;opacity:0.7;">
+    </div>
+    <div class="manifeste-founders">
         <div class="founder-item">
           <div class="founder-name">Gérard Sermier</div>
           <div class="founder-role">Associé fondateur — Breitling Orbiter, Solar Impulse</div>
@@ -1386,7 +1403,10 @@ footer {
 <section class="aio-strip" aria-labelledby="aio-title">
   <div class="aio-inner">
     <div>
-      <div class="aio-left-label">Nouveau</div>
+      <div style="width:100%;overflow:hidden;margin-bottom:1.5rem;border-radius:2px;">
+      <img src="img/lightbulb.avif" alt="Intelligence artificielle et réputation — Media Impact AIO VSEO" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+    </div>
+    <div class="aio-left-label">Nouveau</div>
       <h2 class="aio-title" id="aio-title">
         La réputation se joue<br>désormais dans la <em>mémoire des IA</em>
       </h2>
